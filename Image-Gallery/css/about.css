@@ -1,0 +1,16 @@
+    #content_about {
+    margin: 0 auto;
+    width: 1000px;
+    display: block;
+    background: #fff;
+    margin-top: 20px;
+    }
+   .box{
+      float: left;
+      width: 45%;    
+	  margin: 15px;
+	  text-align: left;
+	  border: 2px solid blue;
+	  padding: 5px;
+    }
+    
