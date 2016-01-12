@@ -34,16 +34,18 @@ html,body{
 	display: block;
 }
 #menu_content{
-	position: absolute;
+	position: relative;
 	height: 100%;
 }
 .menu_left{
 	height: 100%;
-	float: left;
+	top: 50px;
+	left: 0px;
+	right: 1000px;
+	position: absolute;
 	padding-top: 40px;	
-	position: relative;
-	width: 20%;
 	background: #8AD385;
+	z-index: 1;
 }
 .menu_left ul {
  width: auto;
@@ -70,7 +72,7 @@ html,body{
 .content{
 	margin-top: 55px;
 	margin-left: 20px;
-	float: left;
+	float: right;
 	border-right: 1px solid #ececec;
 	border-left: 1px solid #ececec;
 	border-top: 1px solid #ececec;
