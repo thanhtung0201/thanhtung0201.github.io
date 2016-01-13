@@ -1,0 +1,244 @@
+.wrap{
+	background-color: rgb(127, 178, 240);
+	position: relative;
+}
+span{
+	display: block;
+	height: 100%;
+	width: 100%;
+	top:0px;
+	left: 0px;
+	position: fixed;
+	z-index: -100;
+}
+#bg0{
+	background-image: url("../img/lights.gif");
+	position:absolute;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+}
+#bg1{
+	background-image: url("../img/xmas-bg.jpg");
+	position:absolute;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+#bg2{
+	background-image: url("../img/02.png");
+	position:absolute;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+	animation: bg2 25s ease infinite;
+}
+#bg3{
+	background-image: url("../img/03.png");
+	position:absolute;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+	animation: bg3 25s ease infinite;
+}
+#bg4{
+	background-image: url("../img/04.png");
+	position:absolute;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 500px;
+	z-index: 3;
+	animation: bg4 25s ease infinite;
+}
+#bg5{
+	background-image: url("../img/06.png");
+	position:absolute;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+#bg6{
+	background-image: url("../img/snow-ground.png");
+	position:absolute;
+	background-repeat: repeat-x;
+	height: 100%;
+	width: 100%;
+	top: 480px;
+	left: 0px;
+	z-index: 1;
+}
+#bg7{
+	background-image: url("../img/Tree.png");
+	position:absolute;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	top: 100px;
+	left: 200px;
+	z-index: 1;
+}
+#bg8{
+	background-image: url("../img/santa.png");
+	position:absolute;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	top: 330px;
+	left: 80px;
+	z-index: 8;
+	animation: bg8 25s ease ;
+}
+#bg9{
+	background-image: url("../img/snowman-icon.png");
+	position:absolute;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	top: 430px;
+	left: 40px;
+	z-index: 8;
+	animation: bg9 25s ease ;
+}
+#bg10{
+	background-image: url("../img/snow-man.png");
+	position:absolute;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	top: 50px;
+	left: 600px;
+	z-index: 6;
+	animation: bg10 10s ease infinite;
+
+	
+}
+#bg11{
+	background-image: url("../img/snowman-icon.png");
+	position:absolute;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	top: 400px;
+	left: 500px;
+	z-index: 1;	
+}
+
+@keyframes bg2
+{
+  0% {top: 0px; }
+  50%{top: 200px;}
+   100%{top: 0px;}
+}
+@keyframes bg3
+{
+  0% {left: 0px; }
+  50%{left: 500px;}
+   100%{left: 0px;}
+}
+@keyframes bg4
+{
+  0% {left: 500px;}
+  50%{left: 0px;}
+   100%{left: 500px;}
+}
+@keyframes bg8
+{
+  0% {left: 80px;opacity: 1
+  }
+  50%{left: 1200px;opacity: 0}
+  100%{left: 80px;opacity: 1}
+}
+@keyframes bg9
+{
+  0% {left: 40px;opacity: 1
+  }
+  50%{left: 1230px;opacity: 0}
+   100%{left: 40px;opacity: 1}
+}
+
+@keyframes bg10
+{
+	0%{
+	 transform:rotate(30deg) translate(70px, 230px);
+	}
+	50%{
+	   
+	transform:rotate(-30deg) translate(50px, -230px);
+	}
+	100%{
+	 transform:rotate(30deg) translate(70px, 230px);
+	}
+}
+.welcome{
+	position:absolute;
+	height: 100%;
+	width: 100%;
+
+	z-index: 100;
+	font-size: 2.5em;
+    width: 80%;
+    max-width: 900px;
+    margin: 4% auto;
+    text-align: center;
+    text-shadow: 2px 2px 3px #fff;
+    font-style: italic;
+    padding: 1em;
+    color: rgba(120,0,20,.9);
+}
+#text1{
+    top: 100px;
+	left: 200px;
+	animation: text1 10s ease infinite;
+}
+#text2{
+    top: 150px;
+	left: 200px;
+	animation: text2 10s ease infinite;
+}
+@keyframes text1{
+0%{color: #003333}
+10%{color: #009966}
+20%{color: #339933}
+30%{color: #33FF99}
+40%{color: #660099}
+50%{color: #663300}
+60%{color: #66FFFF}
+70%{color: #99CC33}
+80%{color: #CCFFCC}
+90%{color: #FF3333}
+100%{color: #FF0000}
+from{left: 0px}
+to{left: 500px}
+}
+@keyframes text2{
+0%{color: #2EFE2E}
+10%{color: #58FAF4}
+20%{color: #0489B1}
+30%{color: #8904B1}
+40%{color: #DF013A}
+50%{color: #DF3A01}
+60%{color: #243B0B}
+70%{color: #FFFF00}
+80%{color: #610B5E}
+90%{color: #F5A9A9}
+100%{color: #01DF74}
+from{left: 1000px}
+to{left: 0px}
+}
