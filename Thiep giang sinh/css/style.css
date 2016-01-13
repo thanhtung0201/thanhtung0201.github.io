@@ -103,7 +103,7 @@ span{
 	top: 330px;
 	left: 80px;
 	z-index: 8;
-	animation: bg8 25s ease ;
+	animation: bg8 25s ease infinite
 }
 #bg9{
 	background-image: url("../img/snowman-icon.png");
@@ -114,7 +114,7 @@ span{
 	top: 430px;
 	left: 40px;
 	z-index: 8;
-	animation: bg9 25s ease ;
+	animation: bg9 25s ease infinite;
 }
 #bg10{
 	background-image: url("../img/snow-man.png");
@@ -176,21 +176,20 @@ span{
 @keyframes bg10
 {
 	0%{
-	 transform:rotate(30deg) translate(70px, 230px);
+	 transform:rotate(30deg) translate(50px, 230px);
 	}
 	50%{
 	   
 	transform:rotate(-30deg) translate(50px, -230px);
 	}
 	100%{
-	 transform:rotate(30deg) translate(70px, 230px);
+	 transform:rotate(30deg) translate(50px, 230px);
 	}
 }
 .welcome{
 	position:absolute;
 	height: 100%;
 	width: 100%;
-
 	z-index: 100;
 	font-size: 2.5em;
     width: 80%;
