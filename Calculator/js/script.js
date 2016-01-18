@@ -5,6 +5,7 @@
    var specialKey = ['=','C']; // Ky tu dac biet
    var keys = document.querySelectorAll('span'); //Lay tat cac cac nut nhan
    var myHistory  ; //Luu lich su gan nhat
+   var memoryLastZero = '' ; //Luu so gan nhat gan toan hang gan nhat trong xau
    var keyHistory = document.getElementById("history");
    keyHistory.onclick = function(e)
    {
@@ -30,8 +31,8 @@
    					var lastCharScreen = outPutScreen.charAt(outPutScreen.length-1); //Lay ky tu cuoi tren man hinh
    					if(number.indexOf(lastCharScreen) >= 0 && specialKey.indexOf(value) == -1) //Neu ky tu gan cuoi la so
    					{
-                     var lastIndexDot = getLastPosition(outPutScreen,'.'); 
-                      if(outPutScreen.length == 1 && lastCharScreen == '0')
+                     var lastIndexDot = getLastPosition(outPutScreen,'.');
+                     if(outPutScreen.length == 1 && lastCharScreen == '0')
                      {
                         if(value != '0')
                         {
@@ -43,9 +44,11 @@
    						{
    						 if(lastIndexDot <= getLastPosition(outPutScreen,'+')||lastIndexDot <= getLastPosition(outPutScreen,'-')
    						 	||lastIndexDot <= getLastPosition(outPutScreen,'*')||lastIndexDot <= getLastPosition(outPutScreen,'/')
-   						 	||lastIndexDot <= getLastPosition(outPutScreen,'%'))
+   						 	||lastIndexDot <= getLastPosition(outPutScreen,'%'))  // Cho nay de xu ly van de, gia su nhap bieu thuc la 2 + 3.5 thi khong duoc nhap them dau . tiep theo nua
    						 	{
-   						 		document.getElementById("screen").innerHTML = outPutScreen + '.'; 
+                              if(!('0' == memoryLastZero  && !(lastCharScreen  == '0'))){ 
+   						 		document.getElementById("screen").innerHTML = outPutScreen + '.';  //Cho nay de xu ly gia su dang co bieu thuc 2+ 3*05 thi neu nhap tiep cham se ko nhap dc vi js ko tinh dc val(2 + 3*05.33) chang han, nhung tinh dc val(2+0.44)
+                           }
    						 	}
    						}
    						else
@@ -59,13 +62,15 @@
    						{
    							if(number.indexOf(value) >= 0)
    							{
+                           changeValueLastOparator(value);//Ghi nhan so duoc insert vao sau toan hang gan nhat
    							document.getElementById("screen").innerHTML = outPutScreen + value;
    							}
    						}
-   						else 
+   						else   // Chỗ này để xử lý nếu ký tự hiện ại là % , hoặc / thì ko cho nhập tiếp số là 0 (vì hàm val của js  sẽ không xử lý được chia cho 0 như 3/05 == error, cung ko cho 3/0.7 luon :D(bo))
    						{
    							if(number.indexOf(value) > 0)
    							{
+                           changeValueLastOparator(value); ////Ghi nhan so duoc insert vao sau toan hang gan nhat
    								document.getElementById("screen").innerHTML = outPutScreen + value;
    							}
    						}
@@ -108,8 +113,12 @@
    	}
    	function changeValue(temp) // Ham set lay lich su
    	{
-   	myHistory = temp;	
+   	myHistory = temp;
    	}
+      function changeValueLastOparator(temp) // Ham set lay lich su
+      {
+      memoryLastZero = temp;
+      }
 
    	function getLastPosition(str,character) //Ham lay chi so vi tri cuoi cung cua ky tu truyen vao trong mot xau
    		{
