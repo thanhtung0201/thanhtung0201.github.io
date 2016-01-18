@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document Object Model</title>
+	<meta charset = "UTF-8">
+</head>
+<body>
+	<h1>Document Object Model</h1>
+   <p id="doan1">Louis Van Gaal phát biểu ngay trước trận: "Liverpool là đội chơi áp sát rất nhanh. Nhưng hôm nay họ thay một tiền đạo bằng một tiền vệ nên có vẻ họ không dám mạo hiểm. Chúng ta sẽ xem trận đấu phát triển như thế nào. Đây sẽ là một trận đấu mở. Liverpool chơi bóng cống hiến và Man Utd cũng sẽ như thế.</p>
+   <p id="doan2">Tạp chí trào phúng Charlie Hebdo trong số phát hành mới nhất đăng tải một bức biếm họa có hình ảnh hai người đàn ông đang đuổi theo hai người phụ nữ hoảng sợ với chú thích "Cậu bé Alan sẽ như thế nào khi lớn lên? Một kẻ biến thái ở Đức". Bức tranh ngay lập tức vấp phải sự chỉ trích gay gắt trên các trang mạng xã hội. Charlie Hebdo hiện chưa đưa ra bình luận nào về vụ việc.</p>
+   <p id="doan3">Các lệnh trừng phạt từ Nga kết hợp với hậu quả của những cuộc tấn công khủng bố nhằm vào ngành du lịch sẽ khiến nền kinh tế vốn đã khó khăn của Thổ Nhĩ Kỳ càng trở nên tồi tệ hơn, Sputnik dẫn lời ông Aydin Sezer, một cựu quan chức thương mại từng đại diện cho chính phủ Thổ Nhĩ Kỳ tại Moscow, đánh giá.</p>
+
+   <script type="text/javascript">
+   		changeFontSize(29);
+   		increaseFontSize("doan2");
+
+   		changeFontSize(22);
+   		decreaseFontSize("doan1");
+
+   		changeColor();
+
+   		changeBgColor("gray");
+
+   		copyContent("doan1","doan2");
+
+   	 function changeFontSize(x){
+   	 	var commonElement = document.querySelectorAll('p');
+   	 	for(var i = 0 ; i < commonElement.length ; i++)
+   	 	{
+
+   	 		commonElement[i].style.fontSize = x + "px";
+
+   	 	}
+
+   	 }
+
+   	 function increaseFontSize(paragraph)
+   	 {
+   	 	var commonElement = document.getElementById(paragraph);
+  
+   	 		var temp = parseFloat(commonElement.style.fontSize.replace("px",""));
+   	 		if(temp + 1 <= 30)
+   	 		{
+   	 			commonElement.style.fontSize = (temp + 1) + "px";
+   	 		}
+   	 }
+
+   	  function decreaseFontSize(paragraph)
+   	 {
+   	 	var commonElement = document.getElementById(paragraph);
+  
+   	 		var temp = parseFloat(commonElement.style.fontSize.replace("px",""));
+   	 		if(temp - 1 >= 10)
+   	 		{
+   	 			commonElement.style.fontSize = (temp - 1) + "px";
+   	 		}
+   	 }
+
+   	 function changeColor(){
+   	 	var commonElement = document.querySelectorAll('p');
+   	 	commonElement[0].style.color = "green";
+   	 	commonElement[1].style.color = "yellow";
+   	 	commonElement[2].style.color = "red";
+
+   	 }
+
+   	 function changeBgColor(color)
+   	 {
+   	  document.body.style.backgroundColor = color;
+   	 }
+
+   	 function copyContent(paragraph1, paragraph2){
+   	 	document.getElementById(paragraph1).innerHTML = document.getElementById(paragraph2).innerHTML;
+   	 }
+
+   </script>
+</body>
+</html>

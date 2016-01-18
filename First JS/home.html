@@ -3,45 +3,475 @@
 <head>
 	<title>JS</title>
 	<meta charset="UTF-8">
-	<script type="text/javascript" src="js/myScript.js"></script>
 </head>
 <body>
 <script type="text/javascript">
-	document.write("<h1>Bai 1</h1>");
-	document.write("binhPhuong(2) : ");
-	document.write(binhPhuong(2));
+	document.write("<h3>Bai 1</h3>");
+  function binhPhuong(x) {
+  return x * x;
+  }
+	document.write("<p> binhPhuong(2) : " + binhPhuong(2) + "</p>");
 
-	document.write("<h1>Bai 2</h1>");
-	document.write("tongBaSo(4,6,9) : ");
-	document.write(tongBaSo(4,6,9));
+	document.write("<h3>Bai 2</h3>");
+  function tongBaSo(x, y, z) {
+  var temp = 3 * x + 2 * y + z; //Decrale temp , give it calculate (x,y,z)
+  return binhPhuong(temp); //Tinh binh phuong temp
+  }
+  document.write("<p> tongBaSo(4,6,9) : " + tongBaSo(4,6,9) + "</p>");
 
-	document.write("<h1>Bai 3</h1>");
+	document.write("<h3>Bai 3</h3>");
+  function splitString(strInput) {
+  if (!(typeof strInput == 'string') || strInput.length <= 100) //Kiem tra xau dau vao co hop le khong, neu khong tra ve null
+  {
+    alert("Input values does not valid");
+    return null;
+  } else {
+    var tenFirstOfInput = strInput.slice(0, 10); // Lay ra xau gom 10 ky tu dau tien trong xau dau vao va gan cho bien tenFirstOfInput
+    return tenFirstOfInput + "...";
+  }
+
+  }
 	var temp = "ACncncncncncncncnakksksksksskkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkchsdhaydadhadhahdhahdahdhahdhahdahhdahvfdsssssssssssssssssssdfsfsssssssssssssjjhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhjguyuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuyuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuyttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt";
-	document.write("splitString(temp) : ");
-	document.write(splitString(temp));
+  document.write("<p> splitString(temp)  : " + splitString(temp) + "</p>");
 
-	document.write("<h1>Bai 4</h1>");
+
+	document.write("<h3>Bai 4</h3>");
+  function capitalizeString(strInput) {
+  if (!(strInput.length > 0 && (typeof strInput == 'string'))) // Kiem tra dau vao hop le hay khong
+  {
+    alert("Input values does not valid");
+    return null;
+  } else {
+    var fristLetter = strInput.charAt(0).toUpperCase(); // Bien ky tu dau tien thanh chu hoa
+    var secondStr = strInput.slice(1).toLowerCase(); // Lay xau cat ra tu xau dau vao , bo qua ky tu dau tien
+    return fristLetter + secondStr; // Ghep xau duoc ket qua tra ve
+  }
+
+}
 	var temp1 = "le thanh tung";
-	document.write("capitalizeString(temp1) : ");
-	document.write(capitalizeString(temp1));
+  document.write("<p> capitalizeString(temp1)  : " + capitalizeString(temp1) + "</p>");
 
-	document.write("<h1>Bai 5</h1>");
+
+	document.write("<h3>Bai 5</h3>");
+  function minNumberInArray(arrayInput) {
+    var temp = arrayInput[0];
+    for (var i = 0 ; i < arrayInput.length ; i++)
+    {
+      temp = Math.min(temp,arrayInput[i]);
+    }
+  return temp;
+  }
 	var temp2 = [2,4,5,1,-3,98];
-	document.write("minNumberInArray(temp2) : ");
-	document.write(minNumberInArray(temp2));
+  document.write("<p> minNumberInArray(temp2)  : " + minNumberInArray(temp2) + "</p>");
 
-	document.write("<h1>Bai 6</h1>");
+
+	document.write("<h3>Bai 6</h3>");
+  function printOrderString(arrayInput) {
+  var arrayOutPut = arrayInput.sort(); // Sap xep xau
+  for (var i = 0; i < arrayOutPut.length; i++) // Duyet va in
+  {
+    document.write(arrayOutPut[i] + "\n");
+
+  }
+  }
 	var temp4 = ["ten","toi","la", "le", "le" , "thanh" ,"tung"];
 	document.write("printOrderString(a) : ");
 	printOrderString(temp4);
 
-	document.write("<h1>Bai 7</h1>");
-	document.write("techer say : ");
-	document.write(teacher.say() );
-	document.write("  parrent say : ");
-	document.write(parrent.say());
-	document.write("  student say : ");
-	document.write(student.say());
+	document.write("<h3>Bai 7</h3>");
+
+var firstName = "";
+var lastName = "";
+var age = 0;
+
+function aboutMe() //Print introduct myself by firstname, lastName, age
+{
+  return "Xin chào, tên của tôi là " + this.firstName + " " + this.lastName + ". Năm nay tôi " + this.age + " tuổi";
+}
+var teacher = {
+  firstName: "Nguyen",
+  lastName: "Đình Anh ",
+  age: 40,
+  say: function() {}
+}
+var parrent = {
+  firstName: "Lê",
+  lastName: "Hữu Cần ",
+  age: 50,
+  say: function() {}
+}
+var student = {
+  firstName: "Lê",
+  lastName: "Thanh Tùng ",
+  age: 16,
+  say: function() {}
+}
+
+teacher.say = aboutMe;
+parrent.say = aboutMe;
+student.say = aboutMe;
+ document.write("<p> techer say :   : " + teacher.say()  + "</p>");
+ document.write("<p> parrent say :   : " + parrent.say()  + "</p>");
+ document.write("<p> student say :   : " + student.say()  + "</p>");
+</script>
+
+
+<script type="text/javascript">
+	
+	document.write("<h3>Bài 1</h3>");
+    function giaiThua(x)
+    {
+    
+    	if(x == 0 )
+      	 {
+        	return 1;
+      	}
+    	else if(typeof x == 'number' && x > 0)
+    	{
+    			var result = 1;
+    			for(var i = 1 ; i <= x ; i++)
+    			{
+    				result = result*i;
+    			}
+    			return result;
+    	} 
+    	else
+    	{
+    		return null;
+    	}
+
+    
+    }
+    document.write("<p>giaiThua(6) : " + giaiThua(6) + "</p>");
+    document.write("<p>giaiThua(0) : " + giaiThua(0) + "</p>" );
+    document.write("<p>giaiThua('abcd') : " + giaiThua("abcd") + "</p>");
+
+    document.write("<h3>Bài 2</h3>");
+
+     function reverseString(strInput)
+     {
+     	if(strInput.length == 0)
+     	{
+     		return "";
+     	}
+     	else
+     	{
+     		var result = "";
+     		for(var i = strInput.length - 1 ; i >= 0 ; i--)
+     		{
+     			result = result + strInput[i]; 
+     		}
+     		return result;
+     	}
+     	
+     }
+    document.write("<p>reverseString('') : " + reverseString("") + "</p>");
+    document.write("<p>reverseString('lethanhtung') :  " + reverseString("lethanhtung") + "</p>");
+
+    document.write("<h3>Bài 3</h3>");
+
+    function duplicateString(strInput)
+    {
+    	var strOutput = "" ;
+    	for(var i = 0 ; i < 20 ; i++)
+    	{
+    		if(i%2==0){
+    			strOutput = strOutput + "-";
+    		}
+    		else{
+    		strOutput = strOutput + strInput;
+    		}
+    	}
+    	strOutput = strOutput.slice(1);
+    	return strOutput;
+    }
+    document.write("<p>duplicateString('123') :  " + duplicateString("123") + "</p>");
+
+
+    document.write("<h3>Bài 4</h3>");
+    function printOrderStr(arrayStudent)
+    {
+    	var arrayOutput = [];
+    	arrayOutput = arrayStudent.sort();
+    	for(var i = 0 ; i < arrayOutput.length ; i++)
+    	{
+    		document.write("<p> Tên của học viên thứ " + (i + 1) + " là " + arrayOutput[i] + "</p>");
+    	}
+    }
+    var arrayStudent = ["Lê thanh tùng" , "Nguyễn Hải Long", "Nguyễn Việt Hiếu", "Trịnh Tiến Xú", "Dỗ quang huy"];
+    document.write("<p>printOrderStr(arrayStudent)</p> " );
+    document.write(printOrderStr(arrayStudent));
+
+    document.write("<h3>Bài 5</h3>"); 
+    function doubleValueInArray(arrayInput)
+    {
+    	var arrayOutput = new Array(arrayInput.length);
+    	for(var i = 0 ; i < arrayInput.length ; i++)
+    	{
+    		arrayOutput[i] = arrayInput[i]*2;
+    	}
+    	return arrayOutput;
+    }
+    var arrayInput = [2,4,9,7];
+    document.write("<p>doubleValueInArray(arrayInput) là " + doubleValueInArray(arrayInput) + "</p>");
+
+     document.write("<h3>Bài 6</h3>"); 
+     function remainByDevice2(arrayInput)
+    {
+    	var arrayOutput = new Array(arrayInput.length);
+    	for(var i = 0 ; i < arrayInput.length ; i++)
+    	{
+    		arrayOutput[i] = arrayInput[i]%2;
+    	}
+    	return arrayOutput;
+    }
+    var arrayInput = [2,4,9,7,11,34,-43,9];
+    document.write("<p>remainByDevice2(arrayInput) là " + remainByDevice2(arrayInput) + "</p>");
+
+
+
+      document.write("<h1>Bài tập phần Rẽ nhánh</h1>");
+      document.write("<h3>Bài 1</h3>");
+      function maxTwoNumber(num1, num2)
+      {
+      	return (num1 >= num2) ? num1 : num2;
+      }
+       document.write("<p>maxTwoNumber(maxTwoNumber(5,7)) là " + maxTwoNumber(5,7) + "</p>");
+
+    document.write("<h3>Bài 2</h3>");
+        function giaiThua(x)
+    	{
+    	if(Number.isInteger(x) == true && x > 0)
+    	{
+    	   var result = 1;
+    	   for(var i = 1 ; i <= x ; i++)
+    			{
+    				result = result*i;
+    			}
+    			return result;
+    	}
+    	 else
+    	 {
+    		return "Gia tri dau vao khong hop le";
+    	 }
+    	}
+    document.write("<p>giaiThua(6) : " + giaiThua(6) + "</p>");
+    document.write("<p>giaiThua(0) : " + giaiThua(0) + "</p>" );
+    document.write("<p>giaiThua('abcd') : " + giaiThua("abcd") + "</p>");
+    document.write("<p>giaiThua(-5) : " + giaiThua(-5) + "</p>");
+     document.write("<p>giaiThua(7.2) : " + giaiThua(7.2) + "</p>");
+
+
+    document.write("<h3>Bài 3</h3>");
+     function filterEven(arrayInput)
+     {
+     	var arrayOutput = [];
+     	for(var i = 0 ; i < arrayInput.length ; i++)
+     	{
+     		if(arrayInput[i]%2 === 0)
+     		{
+     			arrayOutput.push(arrayInput[i]);
+     		}
+     	}
+     	arrayOutput.sort(function(a,b)
+     	{
+     		return b - a;
+     		}
+     		);
+     	
+     	return arrayOutput;
+     }
+     var arrayInput = [-5,7,12,2,37,4,88,10,-34];
+     document.write("<p>filterEven(arrayInput) : " + filterEven(arrayInput) + "</p>");
+    	
+     document.write("<h3>Bài 4</h3>");
+     function validateUser(user)
+     {
+     	if(typeof user['username'] == 'string'  	&& 
+     	   user['username'].trim().length > 0 	    && 
+     	    user['username'].length <= 20	    	&&
+     	   typeof  user['password'] == 'string' 	&&
+     	   user['password'] === user['confirm'] 	&&
+     	   user['password'].length >= 6 &&  user['password'].length <= 32
+     	    )
+     	{
+     		return "Success";
+     	}
+     	return "Failed";
+     	    
+     }
+     var user = {
+  	username: " ",
+  	password: "secret",
+  	confirm: "secret"
+	}
+	 document.write("<p>validateUser(user) : " + validateUser(user) + "</p>");
+	  var user = {
+  	username: " Le thanh tung",
+  	password: "secret1",
+  	confirm: "secret"
+	}
+	 document.write("<p>validateUser(user) : " + validateUser(user) + "</p>");
+	  var user = {
+  	username: "tunglt20",
+  	password: "tung",
+  	confirm: "tung"
+	}
+	 document.write("<p>validateUser(user) : " + validateUser(user) + "</p>");
+	 	  var user = {
+  	username: "tunglt20",
+  	password: "tunglethanh",
+  	confirm: "tunglethanh"
+	}
+	 document.write("<p>validateUser(user) : " + validateUser(user) + "</p>");
+
+
+
+      document.write("<h1>Bài tập phần Rẽ nhánh phần 2</h1>");
+      document.write("<h3>Bài 1</h3>");
+
+      function getCurrentDateAndSeason()
+      {
+      	var now = new Date();
+      	var month = now.getMonth() + 1;
+      	var year = now.getFullYear();
+      	document.write("<p>Tháng , năm hiện tại là . Tháng : " + month + " ,Năm : " + year );
+      	if(month >= 1 && month <= 3)
+      	{
+      	 document.write("<p>Bây giờ là mùa : Xuân </p>");
+      	}
+       else if(month >= 4 && month <= 6)
+      	{
+      	 document.write("<p>Bây giờ là mùa : Hạ </p>");
+      	}
+      	else if(month >= 7 && month <= 9)
+      	{
+      	 document.write("<p>Bây giờ là mùa : Thu </p>");
+      	}
+      	else if(month >= 9 &&  month <= 12)
+      	{
+      	 document.write("<p>Bây giờ là mùa : Đông </p>");
+      	}
+      	else
+      	{
+      		document.write("<p>Tháng không hợp lệ </p>");
+      	}
+
+      }
+      getCurrentDateAndSeason();
+
+      document.write("<h3>Bài 2</h3>");
+      function splitString(inputStr)
+      {
+      	var strOutput;
+        strOutput = inputStr.toString(); //Tự động convert chuỗi input thành dạng string bất kể đầu vào là xâu hay số      	
+      		if(strOutput.length < 10 )
+      			{
+      			return strOutput;
+      		}
+      		else
+      		{
+      			return strOutput.slice(0, 10) + "...";
+      		}
+      }
+      document.write("<p>splitString('342232') : " + splitString(342232)+ "</p>");
+      document.write("<p>splitString('lethanh') : " + splitString("tunglt20") + "</p>");
+      document.write("<p>splitString('Toi ten la le thanh tung') : " + splitString("Toi ten la le thanh tung") + "</p>");
+
+        document.write("<h3>Bài 3</h3>");
+        function getRank(x)
+        {
+        	/* Mặc định điều kiện điểm đầu vào là từ 0 đến 10*/
+        	if(0 <= x && x <= 3.9)
+        	{
+        		return "Điểm F";
+        	} 
+        	else if(4 <= x && x <= 5.4)
+        	{
+        		return "Điểm D";
+        	} 
+        	else if(5.5 <= x && x <= 6.9)
+        	{
+        		return "Điểm C";
+        	} 
+        	else if(7 <= x && x <= 8.4)
+        	{
+        		return "Điểm B";
+        	} 
+        	else if( 8.5 <= x && x <= 10)
+        	{
+        		return "Điểm A";
+        	}
+        	else
+        	{
+        		return "Giá trị nhập vào không hợp lệ";
+        	}
+        }
+        document.write("<p>getRank(2) : " + getRank(2)+ "</p>");
+        document.write("<p>getRank(4.3) : " + getRank(4.3)+ "</p>");
+        document.write("<p>getRank(5.8) : " + getRank(5.8)+ "</p>");
+        document.write("<p>getRank(7.5) : " + getRank(7.5)+ "</p>");
+        document.write("<p>getRank(9) : " + getRank(9)+ "</p>");
+        document.write("<p>getRank(223) : " + getRank(223)+ "</p>");
+        document.write("<p>getRank('abcd') : " + getRank('abcd')+ "</p>");
+
+        document.write("<h3>Bài 4</h3>");
+        function translate(nationCode)  //Translate hello to other national
+        {
+
+        	switch(nationCode)
+        	{
+        		case 'FR':
+        		{
+        			return 'Bonjour';   //Tieng Phap
+        			break;
+        		}
+        		case 'RUS':
+        		{
+        			return 'Здравствуйте'; //Tieng Nga
+        			break;
+        		}
+        		case 'SP':
+        		{
+        			return 'Hola';  // Tieng Tay ban nha
+        			break;
+        		}
+        		case 'KOR':
+        		{
+        			return '안녕하세요'; //Tieng Han
+        			break;
+        		}
+        		case 'HMONG':
+        		{
+        			return 'nyob zoo'; //Tieng Ho Mong
+        			break;
+        		}
+        		default:
+        		    return 'Xin chao';
+        	}
+        }
+        document.write("<p>translate(FR) : " + translate('FR')+ "</p>");
+        document.write("<p>translate(RUS) : " + translate('RUS')+ "</p>");
+        document.write("<p>translate(SP) : " + translate('SP')+ "</p>");
+        document.write("<p>translate(KOR) : " + translate('KOR')+ "</p>");
+        document.write("<p>translate(HMONG) : " + translate('HMONG')+ "</p>");
+        document.write("<p>translate(VI) : " + translate('VI')+ "</p>");
+
+  		
+        document.write("<h3>Bài 5</h3>");
+        function checkPositionFirst(arrayBoolean)
+        {
+        	for( var i = 0 ; i < arrayBoolean.length ; i++)
+        	{
+        		if(arrayBoolean[i] === true)
+        		{
+        			document.write("<p>Vị trí đầu tiên xuất hiện 'true' trong mảng là : " + (i + 1) +  " ,và là phần tử arrayBoolean[" + i + "]" + "</p>");
+        			break;
+        			}
+        	}
+        }
+        var arrayBoolean = [false, false, false, true, false, true, false, true, false , true];
+    	checkPositionFirst(arrayBoolean);
 </script>
 </body>
 </html>
