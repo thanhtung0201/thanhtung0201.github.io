@@ -30,8 +30,16 @@
    					var lastCharScreen = outPutScreen.charAt(outPutScreen.length-1); //Lay ky tu cuoi tren man hinh
    					if(number.indexOf(lastCharScreen) >= 0 && specialKey.indexOf(value) == -1) //Neu ky tu gan cuoi la so
    					{
-   						var lastIndexDot = getLastPosition(outPutScreen,'.'); 
-   						if(value == '.')  
+                     var lastIndexDot = getLastPosition(outPutScreen,'.'); 
+                      if(outPutScreen.length == 1 && lastCharScreen == '0')
+                     {
+                        if(value != '0')
+                        {
+                           document.getElementById("screen").innerHTML = outPutScreen + value;
+                        }
+                     }
+   						
+   						else if(value == '.')  
    						{
    						 if(lastIndexDot <= getLastPosition(outPutScreen,'+')||lastIndexDot <= getLastPosition(outPutScreen,'-')
    						 	||lastIndexDot <= getLastPosition(outPutScreen,'*')||lastIndexDot <= getLastPosition(outPutScreen,'/')
