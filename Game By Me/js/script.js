@@ -20,9 +20,9 @@ var quest2 = {
 }
 var quest3 = {
 	ask : "Đâu là một câu chuyện cổ tích ?",
-	answer : [{key : "A. Công chúa ngủ trong phòng",value : false},
-			 { key : "B. Công chúa ngủ trong rừng",value : true } ,
-	 	     { key : "C. Công chúa ngủ trong hầm",value : false},
+	answer : [{key : "A. Công chúa bong bóng",value : false},
+			 { key : "B. Công chúa tóc mây",value : true } ,
+	 	     { key : "C. Công chúa thơm phức",value : false},
 	 		 { key : "D. Công chúa mất ngủ",value : false}],
 	level : "ease",
 	no  : "CÂU III"
@@ -135,7 +135,10 @@ var quest15 = {
 	level : "difficult",
 	no  : "CÂU XV"
 }
-
+var icon = document.getElementById("icon");
+var next = document.getElementById("continue");
+var sadIcon = ["img/failed-quest1.png","img/failed-quest2.png","img/failed-quest3.png"];
+var smileIcon = ["img/win-quest1.png","img/win-quest2.png","img/win-quest3.png"];
 var keysAnswer = document.getElementsByClassName("key");
 var titleNum = document.getElementById("title1");
 var titleAnswer = document.getElementById("title2");
@@ -144,24 +147,47 @@ var question = [quest1,quest2,quest3,quest4,quest5,
 				quest11,quest12,quest13,quest14,quest15];
 var arrayCorrect;				
 var level;
+var audio = document.getElementById("audio");
+var audio1 = document.getElementById("audio1");
+audio.play();
 
-//do{
 var i = 0;
-loadData(question[i]);	
-	for(var j = 0 ; j < keysAnswer.length; j++)
+loadData(question[i]);
+	checkOnclick(0);
+	checkOnclick(1);
+	checkOnclick(2);
+	checkOnclick(3);
+	next.onclick = function(e)
 	{
-		keysAnswer[j].onclick = function(e)
-		{
-			alert(arrayCorrect[j][keysAnswer[j].innerHTML]);
-
-		}
-
+		i++;
+		loadData(question[i]);
+		resetState();
 	}
-	//i++;
 
-//}while(i < question.length)
+function checkOnclick(i)
+{
 
-
+  keysAnswer[i].onclick = function(e)
+	{	
+		audio.seekable.start(0);
+		audio.pause();
+		next.style.display = "block";
+		if(arrayCorrect[i][this.innerHTML] == true)
+		{
+			this.style.color = "#00f300";
+			audio1.src = 'audio/pass.wav';
+			audio1.play();
+			icon.src  = smileIcon[Math.floor( Math.random() * 3 )];
+		}
+        else
+        {
+        	this.style.color = "red";
+        	audio1.src = 'audio/failed.wav';
+			audio1.play();
+			icon.src  = sadIcon[Math.floor( Math.random() * 3 )];
+        }
+	}
+}
 function loadData(questObj)
 {	
 	document.getElementById("title1").innerHTML = questObj['no'];
@@ -177,9 +203,14 @@ function loadData(questObj)
    	rObj[obj.key] = obj.value;
    	return rObj;
 	});
-
-
-
-
+}
+function resetState(){
+	document.getElementsByClassName("key")[0].style.color = "#e5faff";
+	document.getElementsByClassName("key")[1].style.color = "#e5faff";
+	document.getElementsByClassName("key")[2].style.color = "#e5faff";
+	document.getElementsByClassName("key")[3].style.color = "#e5faff";
+	next.style.display = "none";
+	icon.src = "img/question-icon.png";
+	audio.play();
 }
 
