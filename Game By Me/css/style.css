@@ -1,0 +1,124 @@
+body{
+	padding: 0px;
+	width: 900px;
+	margin: auto;
+	box-sizing: border-box;
+	background: #f2ffff;
+}
+#wrap{
+	margin-top: 80px;
+	height: 500px;
+	background-image: url("../img/img2.jpg");
+	background-repeat: repeat-x;
+	background-repeat: repeat-y;
+	width: 100%;
+	border-radius: 10px;
+	position: relative;
+}
+#icon{
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	height: 170px;
+	width: 170px;
+}
+.box-ask{
+	height: 40%;
+	float: left;
+	width: 75%;
+	position: relative;
+}
+.box-ask img{
+	display: none;
+	position: absolute;
+	top : 15px;
+	left: 25px;
+	animation : move 2s ease infinite;;
+	cursor: pointer;
+}
+#question{
+	position: absolute;
+	top: 100px;
+	left: 30px;
+	right: 0px;
+	height: auto;
+	font-family: 'Dancing Script', Georgia, Times, serif;
+ 	font-size: 20px;
+ 	line-height: 30px;
+ 	color:  #66ccff;
+ 	font-style: italic;
+ 	
+}
+#title2{
+	text-indent:20px;
+	margin-top: 10px;
+}
+ span{
+	display: block;
+}
+.box-key{
+	position: relative;
+	padding-left:  2.5%;
+	padding-right: 2.5%;
+	height: 60%;
+	width: 80%;
+	float: left;
+
+}
+.box-key span{
+	position: absolute;
+	border-radius: 30%;
+	height: 70px;
+	width: 320px;
+	text-align: center;
+	font-family: 'Dancing Script', Georgia, Times, serif;
+ 	font-size: 30px;
+ 	line-height: 60px;
+ 	color:  #e5faff ;
+ 	background: #005266;
+ 	opacity: 0.5;
+ 	cursor: pointer;
+ 	box-shadow: 0px 4px #e5f7ff;
+}
+.box-key span:hover{
+	box-shadow: 0px 4px #e5f7ff;
+	background: #2952a3;
+	opacity: 0.5;
+}
+.span1{
+	top: 50px;
+	left: 38px;
+}	
+.span2{
+	top: 50px;
+	right: 38px;
+}
+.span3{
+	top: 150px;
+	left: 38px;
+}
+.span4{
+	top: 150px;
+	right: 38px;
+
+}
+@keyframes move{
+0%{-moz-transform: translate(0px, 0px) scale(1) ;
+-webkit-transform: translate(0px, 0px) scale(1);
+-o-transform: translate(0px, 0px) scale(1);
+-ms-transform: translate(0px, 0px) scale(1);
+transform: translate(0px, 0px) scale(1);
+}
+ 50%{-moz-transform: translate(10px, 0px) scale(1.3);
+-webkit-transform: translate(10px, 0px) scale(1.3);
+-o-transform: translate(10px, 0px) scale(1.3);
+-ms-transform: translate(10px, 0px) scale(1.3);
+transform: translate(10px, 0px) scale(1.3);
+}
+100%{-moz-transform: translate(0px, 0px) scale(1);
+-webkit-transform: translate(0px, 0px) scale(1);
+-o-transform: translate(0px, 0px) scale(1);
+-ms-transform: translate(0px, 0px) scale(1);
+transform: translate(0px, 0px) scale(1);
+}
+}
