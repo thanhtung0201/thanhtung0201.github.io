@@ -3,12 +3,25 @@ body{
 	width: 900px;
 	margin: auto;
 	box-sizing: border-box;
-	background: #f2ffff;
+	background: #ffffff;
+	background-image: url("../img/images.jpg");
+	background-repeat: repeat-x;
+	position: relative;
+}
+#introduce{
+	top: 90px;
+	height: 500px;
+	width: 100%;
+	background-image: url("../img/background.png");
+	background-repeat: no-repeat;
+	position: fixed;
+	z-index: 999;
 }
 #wrap{
+	display: none;
 	margin-top: 80px;
 	height: 500px;
-	background-image: url("../img/img2.jpg");
+	background-image: url("../img/ease.jpg");
 	background-repeat: repeat-x;
 	background-repeat: repeat-y;
 	width: 100%;
@@ -45,7 +58,7 @@ body{
 	font-family: 'Dancing Script', Georgia, Times, serif;
  	font-size: 20px;
  	line-height: 30px;
- 	color:  #66ccff;
+ 	color: #1a1aff;
  	font-style: italic;
  	
 }
@@ -74,15 +87,14 @@ body{
 	font-family: 'Dancing Script', Georgia, Times, serif;
  	font-size: 25px;
  	line-height: 60px;
- 	color:  #e5faff ;
- 	background: #005266;
- 	opacity: 0.5;
+ 	color:  #ffffff ;
+ 	background: #0059b3;
+ 	opacity: 0.8;
  	cursor: pointer;
  	box-shadow: 0px 4px #e5f7ff;
 }
 .box-key span:hover{
 	box-shadow: 0px 4px #e5f7ff;
-	background: #2952a3;
 	opacity: 0.5;
 }
 .span1{
