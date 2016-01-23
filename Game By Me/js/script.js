@@ -1,5 +1,4 @@
-//Khai bao mang cac cau hoi 
-
+/*Bo du lieu */
 var quest1 = {
     ask : "Người ta thường nói thừa nước đục thả gì ?",
     answer :  [{key:"A. Câu", value:true},
@@ -116,12 +115,85 @@ var quest14 = {
 }
 var quest15 = {
     ask : "Đại sứ thiện chí đầu tiên của quỹ nhi đồng liên hiệp quốc là ai?",
-    answer  : [{key : "A. Leon Lai",value : true},
+    answer  : [{key : "A. Leon Lai",value : false},
                {key : "B. Danny kaye",value : false},
                {key : "C. Audrey Hepburn",value : true},
                {key : "D. Judy Collins",value : false}],
     level : "difficult"
 }
+var quest16 = {
+    ask : "Giải Grand Slam đầu tiên trong năm là giải nào?",
+    answer  : [{key : "A. Austrlia mở rộng",value : true},
+               {key : "B. Wimbledon",value : false},
+               {key : "C. Roland Garos",value :false},
+               {key : "D. Mỹ mở rộng",value : false}],
+    level : "medium"
+}
+var quest17 = {
+    ask : "Giáo sư Trần Văn Khê nổi tiếng ở lĩnh vực nào?",
+    answer  : [{key : "A. Toán học",value : false},
+               {key : "B. Thiên văn học",value : false},
+               {key : "C. Lịch sử",value : false},
+               {key : "D. Âm nhạc",value : true}],
+    level : "ease"
+}
+var quest18 = {
+    ask : "CLB nào vô địch FIFA Club World Cup 2010 tổ chức tại Qatar?",
+    answer  : [{key : "A. Inter Milan",value : true},
+               {key : "B. Real Madrid",value : false},
+               {key : "C. Bayern Munich",value : false},
+               {key : "D. Manchester United",value : false}],
+    level : "difficult"
+}
+var quest19 = {
+    ask : "Phú Yên-tỉnh đăng cai Năm du lịch quốc gia 2011 ở khu vực nào?",
+    answer  : [{key : "A. Nam Trung Bộ",value : true},
+               {key : "B. Tây Nguyên",value : false},
+               {key : "C. Đông Bắc Bộ",value : false},
+               {key : "D. Tây Nam Bộ",value : false}],
+    level : "ease"
+}
+var quest20 = {
+    ask : "Bảo tàng Hồ Chí Minh khánh thành vào đúng dịp kỷ niệm <br> lần thứ mấy ngày sinh của Bác?",
+    answer  : [{key : "A. 70",value : false},
+               {key : "B. 80",value : false},
+               {key : "C. 90",value : false},
+               {key : "D. 100",value : true}],
+    level : "difficult"
+}
+var quest21 = {
+    ask : "Lễ Hội Gióng chính thức được nhận bằng <br> Di sản văn hoá thế giới vào năm nào?",
+    answer  : [{key : "A. 2008",value : false},
+               {key : "B. 2009",value : false},
+               {key : "C. 2010",value : true},
+               {key : "D. 2011",value : false}],
+    level : "medium"
+}
+var quest22 = {
+    ask : "Phổi, họng, thanh quản, khí quản, phế quản, phổi là <br> những cơ quan thuộc hệ cơ quan nào trong cơ thể người?",
+    answer  : [{key : "A. Hệ tuần hoàn",value : false},
+               {key : "B. Hệ sinh dục",value : false},
+               {key : "C. Hệ hô hấp",value : true},
+               {key : "D. Hệ thần kinh",value : false}],
+    level : "ease"
+}
+var quest23 = {
+    ask : "Tổng bí thư Trung ương Đản cộng sản Việt Nam được bầu tại Đại hội XI là ai?",
+    answer  : [{key : "A. Nguyễn Tấn Dũng",value :false},
+               {key : "B. Nguyễn Phú Trọng",value : true},
+               {key : "C. Nguyễn Minh Triết",value : false},
+               {key : "D. Nguyễn Văn An",value : false}],
+    level : "difficult"
+}
+var quest24 = {
+    ask : "Trong các hàm số lượng giác cơ bản, hàm số nào là hàm số chẵn?",
+    answer  : [{key : "A. y = sinx",value :false},
+               {key : "B. y = cosx",value : true},
+               {key : "C. y = cotgx",value : false},
+               {key : "D. y = tgx",value : false}],
+    level : "medium"
+}
+
 var no = ["CÂU I", "CÂU II", "CÂU III", "CÂU IV", "CÂU V"
           , "CÂU VI", "CÂU VII", "CÂU VIII", "CÂU IX", 
           "CÂU X", "CÂU XI", "CÂU XII", "CÂU XIII", "CÂU XIV", "CÂU XV"];
@@ -134,16 +206,28 @@ var titleNum = document.getElementById("title1");
 var titleAnswer = document.getElementById("title2");
 var question = [quest1,quest2,quest3,quest4,quest5,
                 quest6,quest7,quest8,quest9,quest10,
-                quest11,quest12,quest13,quest14,quest15];
-
+                quest11,quest12,quest13,quest14,quest15,
+                quest16,quest17,quest18,quest19,quest20,
+                quest21,quest22,quest23,quest24];
+var button = document.getElementById("button");
 var questionTarget = [];
 randomSplitInput(question);            
 var arrayCorrect;                
 var level;
 var audio = document.getElementById("audio");
 var audio1 = document.getElementById("audio1");
-audio.play();
+var point = [];
 
+button.onclick = function(e)
+{
+document.getElementById("introduce").style.display = "none";
+this.style.display = "none";
+document.getElementById("wrap").style.display = "block";
+audio.loop = true;
+audio.src = 'audio/ingame.mp3';
+audio.play();
+}
+audio.play();
 var i = 0;
 loadData(questionTarget[i]);
 document.getElementById("title1").innerHTML = no[i];
@@ -153,25 +237,43 @@ document.getElementById("title1").innerHTML = no[i];
     checkOnclick(3);
     next.onclick = function(e)
     {
+        if(i == 14)
+        {
+          window.location.href = "result.html" + "?result=" + point;
+        }
+        else{
         i++;
         loadData(questionTarget[i]);
         document.getElementById("title1").innerHTML = no[i];
         resetState();
+        }      
     }
 
-function checkOnclick(i)
+function checkOnclick(t)
 {
 
-  keysAnswer[i].onclick = function(e)
+  keysAnswer[t].onclick = function(e)
     {    
         audio.pause();
         next.style.display = "block";
-        if(arrayCorrect[i][this.innerHTML] == true)
+        if(arrayCorrect[t][this.innerHTML] == true)
         {
             this.style.color = "#00ff00";
             audio1.src = 'audio/pass.wav';
             audio1.play();
             icon.src  = smileIcon[Math.floor( Math.random() * 3 )];
+            if(questionTarget[i]['level'] == "ease")
+            {
+              point.push(5);
+            }
+            else if(questionTarget[i]['level'] == "medium")
+            {
+              point.push(10);
+            }
+            else
+            {
+              point.push(15);
+            }
         }
         else
         {
@@ -180,6 +282,7 @@ function checkOnclick(i)
             audio1.src = 'audio/failed.wav';
             audio1.play();
             icon.src  = sadIcon[Math.floor( Math.random() * 3 )];
+            point.push(0);
         }
          keysAnswer[0].style.pointerEvents = "none";
          keysAnswer[1].style.pointerEvents = "none";
@@ -286,11 +389,13 @@ function randomSplitInput(quest)
 function pushRandomArrayToArray(input)
 {
        var i = 0;
-          while(i < input.length)
+       var count = 0;
+          while(i < input.length && count < 5)
           {
             var temp = input[Math.floor( Math.random() * (input.length-i) )];
             questionTarget.push(temp);
             removeArrayItem(input,temp);
+            count++;
           }                    
 }
 
@@ -309,3 +414,4 @@ function removeArrayItem(array, itemToRemove) {
     }
     return removeCounter;
 }
+
