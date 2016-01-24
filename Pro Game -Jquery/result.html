@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+	<meta charset = "UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/result.css">
+</head>
+<body>
+  <div id = "result">
+  		<p class="point">
+  		  Câu 1 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 2 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 3 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 4 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 5 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 6 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 7 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 8 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 9 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 10 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 11 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 12 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 13 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 14 : 5 điểm 
+  		</p>
+  		<p class="point">
+  		  Câu 15 : 5 điểm 
+  		</p>
+  		<p class="point1">
+  		sdsadasdsadasdadasdadas
+  		</p>
+  		<br>
+  		<button id = "button1" class="button">Chơi lại</button>
+  		<button id = "button2" class="button">Kết thúc</button>
+  </div>
+  <h1 id = "title">Bạn đã giành được 100 điểm</h1>
+  <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript">
+  var Resultparameter = getUrlParameters("result", "", true).split(",");
+  var result = document.getElementsByClassName("point");
+  var point = 0;
+  for(var i = 0 ; i < result.length ; i++)
+  {
+   result[i].innerHTML = "Câu " + (i+1) + " : " + Resultparameter[i] + " điểm";
+   point = point + parseInt(Resultparameter[i]);
+  }
+  $("#title").html("Bạn đã giành được " + point + " điểm");
+  var playAgain = $("#button1");
+  playAgain[0].onclick = function(e)
+  {
+
+  	 window.location.href = "home.html";
+  }
+   var endGame = $("#button2");
+   endGame[0].onclick = function(e)
+   {
+   	if(point >= 130 )
+   	{
+   		window.location.href = "champion.html";
+   	}
+   	else
+   	{
+   		window.location.href = "motivation.html";
+   	}
+   }
+  </script>
+}
+</body>
+</html>

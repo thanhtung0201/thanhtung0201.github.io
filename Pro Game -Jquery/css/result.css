@@ -1,0 +1,73 @@
+body{
+	width: auto;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	margin: auto;
+	background-image: url("../img/images.jpg");
+	background-repeat: no-repeat;
+	position: relative;
+}
+#result{
+height:450px;
+width: 349px;
+top: 70px;
+left: 500px;
+position: absolute;
+border: 1px solid #75a3a3;
+background: #ffffff;
+box-shadow: 2px 2px #ffffff;
+border-radius: 10px;
+opacity: 0.5;
+font-weight: bold;
+font-size: 20px;
+padding-bottom: 20px;
+}
+p{
+	padding-left: 10px;
+	margin-top: 5px;
+	float: left;
+	width: 47%;
+	color: blue;
+}
+button{
+	    border-radius: 2em;            
+        text-decoration: none;
+        color: white;                                           
+        font-weight: bold;        
+        text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+        font-size: 20px;
+        float: left;
+        width: 50%;
+        background-color: #8c1aff; 
+        height: 50px;
+        text-align: center;
+    }
+    .point1{
+    	opacity: 0;
+    }
+
+h1{
+	position: absolute;
+	top: 0px;
+	left: 200px;
+	animation: text1 10s ease infinite;
+	text-transform: uppercase;
+	font-size: 40px;
+}
+
+@keyframes text1{
+0%{color: #003333}
+10%{color: #009966}
+20%{color: #339933}
+30%{color: #33FF99}
+40%{color: #660099}
+50%{color: #663300}
+60%{color: #66FFFF}
+70%{color: #99CC33}
+80%{color: #CCFFCC}
+90%{color: #FF3333}
+100%{color: #FF0000}
+from{left: 200px}
+to{left: 700px}
+}    
