@@ -1,10 +1,10 @@
 //Global card
 var cards = ['img1.png','img2.jpg','img3.png','img4.jpg','img5.jpg','img6.jpg','img7.jpg','img8.png','img9.jpg','img10.jpg',
-			 'img10.jpg','img11.jpg','img12.jpg','img13.png','img14.png','img15.jpg','img16.jpg','img17.jpg','img18.jpg',
-			 'img19.jpg','img20.jpg','img21.jpg','img22.png','img23.png','img24.png','img25.jpg','img26.png','img27.png',
-			 'img28.jpg','img29.jpg','img30.jpg','img31.jpg','img32.jpg','img33.jpg','img34.jpg','img35.jpg','img36.jpg',
-			 'img37.jpg','img38.jpg','img39.jpg','img40.jpg','img41.jpg','img42.jpg','img43.jpg','img44.jpg','img45.jpg',
-			 'img46.jpg','img47.jpg','img48.jpg','img49.jpg','img50.jpg','img51.jpg','img52.jpg'];
+       'img10.jpg','img11.jpg','img12.jpg','img13.png','img14.png','img15.jpg','img16.jpg','img17.jpg','img18.jpg',
+       'img19.jpg','img20.jpg','img21.jpg','img22.png','img23.png','img24.png','img25.jpg','img26.png','img27.png',
+       'img28.jpg','img29.jpg','img30.jpg','img31.jpg','img32.jpg','img33.jpg','img34.jpg','img35.jpg','img36.jpg',
+       'img37.jpg','img38.jpg','img39.jpg','img40.jpg','img41.jpg','img42.jpg','img43.jpg','img44.jpg','img45.jpg',
+       'img46.jpg','img47.jpg','img48.jpg','img49.jpg','img50.jpg','img51.jpg','img52.jpg'];
 var background = ['bg1.jpg','bg2.jpg','bg3.jpg','bg4.jpg','bg5.jpg','bg6.jpg'];
 var card = $(".card");
 //Create array card random for game 
@@ -45,7 +45,7 @@ if(level == 1)
 else
 {
   imagesCard = 'back.jpg';
-  time = 700;
+  time = 500;
   increaseWidth = 3;
   timeStopCard = 400;
   $("#audio").attr("src",'audio/ingame.mp3');
@@ -113,24 +113,25 @@ function flip(card,timeStopCard)
   $("#click").attr("loop",false);
   $("#click").trigger("play");
   $(card).toggleClass("flipped");
-  $(card).css('pointerEvents','none');
   if(!current)
   {
     current = $(card);
+    $(card).css('pointerEvents','none');
   }
   else
   {
+     $(".card").css('pointerEvents','none');
     if(current.attr('data-name') != $(card).attr('data-name'))
     {
-
+       
       setTimeout(function(){
         $(card).toggleClass("flipped");
         current.toggleClass("flipped");
-        $(card).css('pointerEvents','auto');
-        current.css('pointerEvents','auto');
         $("#click").attr("src",'audio/wrong.mp3');
         $("#click").attr("loop",false);
         $("#click").trigger("play");
+        $(".card").css('pointerEvents','auto');
+        $(".card.displayCard").css('pointerEvents','none');
         current = null;
       },timeStopCard);
     }
@@ -140,13 +141,14 @@ function flip(card,timeStopCard)
         globalIncrease = true;
         count++;
         $(card).css('opacity',0);  
-        current.css('opacity',0);
-        $(card).css('pointerEvents','none');
-        current.css('pointerEvents','none');
+        current.css('opacity',0);  
         $("#click").attr("src",'audio/right.mp3');
         $("#click").attr("loop",false);
         $("#click").trigger("play");
-
+        $(card).addClass("displayCard");
+        current.addClass("displayCard");
+        $(".card").css('pointerEvents','auto');
+        $(".card.displayCard").css('pointerEvents','none');
         current = null;
       },300);
     }
@@ -156,7 +158,7 @@ function flip(card,timeStopCard)
 //Get random numberCard from input array card
 function pushRandomArrayToArray(input,numberCard)
 {
-	   var randomNumberCard = [];
+     var randomNumberCard = [];
        var i = 0;
        var count = 0;
           while(i < input.length && count < numberCard)
