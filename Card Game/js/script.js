@@ -45,8 +45,8 @@ if(level == 1)
 else
 {
   imagesCard = 'back.jpg';
-  time = 500;
-  increaseWidth = 3;
+  time = 400;
+  increaseWidth = 4;
   timeStopCard = 400;
   $("#audio").attr("src",'audio/ingame.mp3');
   $("#audio").trigger("play");
