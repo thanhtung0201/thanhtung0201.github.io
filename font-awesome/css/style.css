@@ -1,0 +1,39 @@
+.bgnav{
+    background-image: url("../images/menu.jpg");
+}
+.navbar-nav > li > a {
+	color: white !important;
+}
+.navbar-nav > li > a:hover{
+	background-color: #004d99 !important;
+}
+#brand{
+	color: white;
+}
+#img-cover{
+	height: 300px;
+	max-width: 1300px;	
+}
+#img-cover img{
+ height: 100%;
+ width: 100%;
+}
+.colImg a{
+	height: 180px;
+}
+.rowImg{
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+.colImg a img{
+	width: 100%;
+	height: 100%;
+}
+.colImg i{
+    cursor: pointer;
+    color: #3366ff;
+}
+.colImg span{
+    cursor: pointer;
+    margin-right: 8px;
+}

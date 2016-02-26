@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Images show</title>
+	<meta charset = "UTF-8">
+	<link rel="stylesheet" type="text/css" href="font/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+ <nav class="navbar navbar-default bgnav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" id = "brand" href="#">Images Show</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Nature</a></li>
+      <li><a href="#">Science</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    	<li><a href="#"><i class="fa fa-user"> Sign up</i></a></li>
+    	<li><a href="#"><i class="fa fa-sign-in"> Login</i></a></li> 
+    	<li> <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-circle-o"></i></button>
+                    </div>
+                </div>
+            </form>
+            </li>
+    </ul>
+  </div>
+</nav>
+	<div id="img-cover">
+		<img src="images/bg3.jpg">	
+	</div>
+	<div class="container">
+		<div class="row rowImg">
+			<div class="col-md-3 colImg">
+			<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+    			 <img src="images/london.jpg"  alt="Cinque Terre">
+
+    		</a><div id = "append">
+    		      <i class="fa fa-thumbs-o-up fa-lg"></i><span> Like </span>
+    			  <i class="fa fa-commenting-o fa-lg"></i><span>  Comment  </span>
+    			  <i class="fa fa-share fa-lg"></i><span>  Share </span>
+    			  </div>	 				 		
+			</div>
+			<div class="col-md-3 colImg">
+			<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+				<img src="images/london1.jpg"  alt="Cinque Terre">
+			</a>	
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+				    <img src="images/london2.jpeg"  alt="Cinque Terre">
+				</a>
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+				   <img src="images/london3.jpeg"  alt="Cinque Terre">
+				</a>
+			</div>
+		</div>
+		<div class="row rowImg">
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+			 		<img src="images/london4.jpg"  alt="Cinque Terre">
+			 	</a>
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+					<img src="images/london5.JPG"  alt="Cinque Terre">
+				</a>	
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+					<img src="images/london6.jpeg"  alt="Cinque Terre">
+				</a>	
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+					<img src="images/london7.jpeg"  alt="Cinque Terre">
+				</a>
+			</div>
+		</div>
+		<div class="row rowImg">
+			<div class="col-md-3 colImg">
+			 	<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+			 		<img src="images/london8.jpg"  alt="Cinque Terre">
+			 	</a>
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+					<img src="images/london9.jpg"  alt="Cinque Terre">
+				</a>
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+					<img src="images/london10.jpg"  alt="Cinque Terre">
+				</a>
+			</div>
+			<div class="col-md-3 colImg">
+				<a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+					<img src="images/london11.jpg"  alt="Cinque Terre">
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    	<div class="modal-dialog">
+        	<button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
+        	<div class="modal-content">
+            	<div class="modal-body">
+                	<img src="" alt="" />
+            	</div>
+        	</div>
+    	</div>
+	</div>
+	
+
+	<div class="panel-footer" align="center">
+			<i class="fa fa-mixcloud"> Coppy Right By MixCloud</i>
+	</div> 	 	
+</body>
+<script type="text/javascript">
+	var temp = $(".thumbnail");
+		temp.after($("#append"));
+</script>		

@@ -1,15 +1,18 @@
 @font-face {
   font-family: "my-font";
-  src: url('../font/scss/Andika-R.ttf'); /* Su dung font Andika cho body*/
+  src: url('../font/Andika-R.ttf'); /* Su dung font Andika cho body*/
 }
 @font-face {
   font-family: "h-font";
-  src: url('../font/scss/Tinos-Italic.ttf'); /* Su dung font Tinos cho the h4*/
+  src: url('../font/Tinos-Italic.ttf'); /* Su dung font Tinos cho the h4*/
 }
 body{
 	font-family: my-font;
 }
-h4{
+h3 h4{
+	font-family: h-font !important;
+}
+.footer {
 	font-family: h-font !important;
 }
 a{
