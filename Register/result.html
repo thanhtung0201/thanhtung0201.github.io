@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+	<meta charset = "UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+</head>
+<body>
+  <div class="container" id="content">
+  	 <h1>Sign up successfully</h1>
+  	 <h3 id = "userName"></h3>
+  	 <h3 id = "email"></h3>
+  	 <h3 id = "password"></h3>
+  	 <h3 id = "birthday"></h3>
+  	 <h3 id = "gender"></h3>
+  	 <h3 id = "phone"></h3>
+  </div>
+  <script type="text/javascript">
+     var currentURL = window.location.href;
+  	 var currLocation = (currentURL.length)? currentURL : window.location.search;
+  	 currLocation = currLocation.replace(/\+/g, '%20');
+
+  	 parArr = currLocation.split("?")[1].split("&");
+  	 userName = decodeURIComponent(parArr[0].split("=")[1]) + " " + decodeURIComponent(parArr[1].split("=")[1]);
+  	 email = decodeURIComponent(parArr[2].split("=")[1]);
+  	 password = decodeURIComponent(parArr[3].split("=")[1]);
+  	 birthday = decodeURIComponent(parArr[6].split("=")[1]) + "/" + decodeURIComponent(parArr[5].split("=")[1]) + "/"+decodeURIComponent(parArr[7].split("=")[1]);
+  	 gender = decodeURIComponent(parArr[8].split("=")[1]) == "0"?"Male":"Female";
+  	 phone = decodeURIComponent(parArr[9].split("=")[1]);
+  	 $("#userName").html("User name : " + userName );
+  	 $("#email").text("Email : " + email);
+  	 $("#password").text("Password : " + password);
+  	 $("#birthday").text("Birthday : " + birthday);
+  	 $("#gender").text("Gender : " + gender);
+  	 $("#phone").text("Phone : " + phone);
+
+  </script>
+</body>
+</html>
